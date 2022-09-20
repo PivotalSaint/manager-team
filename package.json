@@ -1,0 +1,22 @@
+{
+  "name": "manager-team",
+  "version": "1.0.0",
+  "description": "This is a project that helps managers create scheduling for employees",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PivotalSaint/manager-team.git"
+  },
+  "author": "Pivotal Saint",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PivotalSaint/manager-team/issues"
+  },
+  "homepage": "https://github.com/PivotalSaint/manager-team#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
