@@ -1,10 +1,10 @@
 const inquirer = require('inquirer');
-const Employee = require('./lib/Employee.js');
+const Employee = require('../lib/Employee');
 
 test('creates an employee object', ()=>{
-    const employee = new Employee('name', 'id', 'email');
+    const employee = new Employee('employee', 'name', 'id', 'link');
 
     expect(employee.name).toBe('name');
     expect(employee.id).toBe('id');
-    expect(employee.email).toBe('email');
+    expect(employee.link).toBe('link');
 });
