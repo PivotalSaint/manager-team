@@ -101,16 +101,8 @@ Add a New Team Member
         },
         {
             type: 'input',
-            name: 'about',
+            name: 'position',
             message: 'Enter Team members information: Intern-School Name/Engineer-Github',
-            when: ({ confirmAbout }) => {
-                if (confirmAbout) {
-                    return true;
-                } else {
-                    return false;
-                }
-            },
-
             validate: nameInput => {
                 if (nameInput) {
                     return true;
