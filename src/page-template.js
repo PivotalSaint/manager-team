@@ -20,19 +20,19 @@ const generateAbout = aboutText => {
         <div class="flex-row justify-space-between">
         ${projectsArr
           .filter(({ feature }) => feature)
-          .map(({ name, description, languages, position, link, github, officeNum}) => {
+          //desc = id  || lang = intern/eng || position = || link =email || officeNum = phone //
+          .map(({ name, id, languages, school, link, github, officeNum}) => {
             return `
-            <div class="col-12 mb-2 bg-dark text-light p-3">
-              <h3 class="portfolio-item-title text-light">${name}</h3>
-              <h4 class="portfolio-officeNum">Office Number: ${officeNum}</h4>
+            <div class="col-12 mb-2 bg-dark text-dark p-3">
+              <h3 class="portfolio-item-title ml-2 my-1 px-2 py-1 bg-secondary text-dark">${name}</h3>
               <h5 class="portfolio-languages">
                 Position:
                 ${languages.map(languages => languages).join(',')}
               </h5>
-              <p>${description}</p>
-              <p>${position}</p>
-              <a class="ml-2 my-1 px-2 py-1 bg-secondary text-dark" href="https://github.com/${position}">Engineer's GitHub</a>
-              <a href="mailto:${link}" class="btn is-responsive mt-auto">Email this Team Member</a>
+              <p class="bg-secondary text-dark">Employee ID:${id}</p>
+              <p class="bg-secondary text-dark">School: ${school}</p>
+              <a class="btn is-responsive mt-auto ml-2 my-1 px-2 py-1 bg-secondary text-dark" href="https://github.com/${github}">Engineer's GitHub</a>
+              <a href="mailto:${link}" class="btn is-responsive mt-auto ml-2 my-1 px-2 py-1 bg-secondary text-dark">Email this Team Member</a>
             </div>
           `;
           })
@@ -63,9 +63,11 @@ const generateAbout = aboutText => {
     <body>
       <header>
         <div class="container flex-row justify-space-between align-center py-3">
-          <h1 class="page-title text-secondary bg-dark py-2 px-3">${header.name}</h1>
+          <h1 class="page-title text-secondary bg-dark py-2 px-3">Manager's Name:${header.name}</h1>
           <nav class="flex-row">
-            <p class="ml-2 my-1 px-2 py-1 bg-secondary text-dark">${header.officeNum}</p>
+          <a href="mailto:${header.link}" class="btn is-responsive mt-auto">Email this Team Manager</a>
+            <p class="ml-2 my-1 px-2 py-1 bg-secondary text-dark">Get in Touch:${header.officeNum}</p>
+            <p class="ml-2 my-1 px-2 py-1 bg-secondary text-dark">Employee ID:${header.id}</p>
           </nav>
         </div>
       </header>

@@ -24,7 +24,7 @@ const promptUser = () => {
         },
         {
             type: 'input',
-            name: 'description',
+            name: 'id',
             message: 'Please enter your team member ID (Required)',
             validate: nameInput => {
                 if (nameInput) {
@@ -100,6 +100,12 @@ Add a New Team Member
     }
     return inquirer.prompt([
         {
+            type: 'checkbox',
+            name: 'languages',
+            message: 'What position does this member have? (Check one)',
+            choices: ['Engineer', 'Intern']
+        },
+        {
             type: 'input',
             name: 'name',
             message: 'What is the name of your team member?',
@@ -114,8 +120,8 @@ Add a New Team Member
         },
         {
             type: 'input',
-            name: 'description',
-            message: 'Please enter your team member ID (Required)',
+            name: 'id',
+            message: 'Please enter the team member ID (Required)',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -126,20 +132,40 @@ Add a New Team Member
             }
         },
         {
-            type: 'checkbox',
-            name: 'languages',
-            message: 'What position does this member have? (Check one)',
-            choices: ['Engineer', 'Intern']
-        },
-        {
             type: 'input',
-            name: 'position',
-            message: 'Enter Team member information for: Intern (enter) School Name/for: Engineer (enter) Github Name',
+            name: 'school',
+            message: 'Enter the school attending for Intern || For Engineers: Put N/A',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log('Please provide Intern-School Name/ Engineer- Github Name');
+                    console.log('Please provide Intern-School Name or put N/A for engineer');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'link',
+            message: 'Enter the email to your employee. (Required)',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please provide email!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Enter github name for Engineer (ie. PivotalSaint) || Intern: put N/A',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please provide github name, for intern put N/A');
                     return false;
                 }
             }
