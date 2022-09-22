@@ -1,6 +1,6 @@
 # manager-team
 # Screenshot
-[!img](/media/manager-screenshot.png)
+![img](/media/manager-screenshot.png)
 "Screenshot of Team Builder"
 
 # Relative Links
