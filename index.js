@@ -19,7 +19,7 @@ const promptUser = () => {
         },
         {
             type: 'input',
-            name: 'github',
+            name: 'officeNum',
             message: 'Enter your GitHub Username',
             validate: nameInput => {
                 if (nameInput) {
@@ -96,21 +96,13 @@ Add a New Team Member
         {
             type: 'checkbox',
             name: 'languages',
-            message: 'What position does this member have? (Check all that apply)',
-            choices: ['engineer', 'intern']
+            message: 'What position does this member have? (Check one)',
+            choices: ['Engineer', 'Intern']
         },
         {
             type: 'input',
-            name: 'about',
-            message: 'Enter Team members information: Intern-School Name/Engineer-Github',
-            when: ({ confirmAbout }) => {
-                if (confirmAbout) {
-                    return true;
-                } else {
-                    return false;
-                }
-            },
-
+            name: 'position',
+            message: 'Enter Team member information for: Intern (enter) School Name/for: Engineer (enter) Github Name',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
