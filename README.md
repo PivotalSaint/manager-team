@@ -1,4 +1,13 @@
 # manager-team
+# Screenshot
+[!img](/media/manager-screenshot.png)
+"Screenshot of Team Builder"
+
+# Relative Links
+
+***Author: Jesse Van Winkle***
+    html semantics: https://github.com/PivotalSaint/manager-team
+
 
 ## User Story
     AS A manager
