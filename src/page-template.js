@@ -20,17 +20,19 @@ const generateAbout = aboutText => {
         <div class="flex-row justify-space-between">
         ${projectsArr
           .filter(({ feature }) => feature)
-          .map(({ name, description, languages, position, link }) => {
+          .map(({ name, description, languages, position, link, github, officeNum}) => {
             return `
             <div class="col-12 mb-2 bg-dark text-light p-3">
               <h3 class="portfolio-item-title text-light">${name}</h3>
+              <h4 class="portfolio-officeNum">Office Number: ${officeNum}</h4>
               <h5 class="portfolio-languages">
                 Position:
-                ${languages.map(language => language).join(',')}
+                ${languages.map(languages => languages).join(',')}
               </h5>
               <p>${description}</p>
               <p>${position}</p>
-              <a email="${link}" class="btn mt-auto">Email this Member</a>
+              <a class="ml-2 my-1 px-2 py-1 bg-secondary text-dark" href="https://github.com/${position}">Engineer's GitHub</a>
+              <a href="mailto:${link}" class="btn is-responsive mt-auto">Email this Team Member</a>
             </div>
           `;
           })
@@ -63,9 +65,7 @@ const generateAbout = aboutText => {
         <div class="container flex-row justify-space-between align-center py-3">
           <h1 class="page-title text-secondary bg-dark py-2 px-3">${header.name}</h1>
           <nav class="flex-row">
-            <a class="ml-2 my-1 px-2 py-1 bg-secondary text-dark" href="https://github.com/${
-              header.github
-            }">GitHub</a>
+            <p class="ml-2 my-1 px-2 py-1 bg-secondary text-dark">${header.officeNum}</p>
           </nav>
         </div>
       </header>
