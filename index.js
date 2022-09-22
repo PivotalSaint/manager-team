@@ -1,18 +1,49 @@
 const inquirer = require('inquirer');
+const Employee = require('./lib/Employee.js')
+const Engineer = require('./lib/Engineer.js');
+const Intern = require('./lib/Intern.js');
+const Manager = require('./lib/Manager.js');
 const generatePage = require('./src/page-template.js');
 const { writeFile, copyFile } = require('./utils/generate-site.js');
 
 const promptUser = () => {
     return inquirer.prompt([
+        //    THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
         {
             type: 'input',
             name: 'name',
-            message: 'What is your name Manager? (Required)',
+            message: 'What is the team Manager name? (Required)',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log('Please enter your name, you are a manager!');
+                    console.log('Please enter name for manager.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'description',
+            message: 'Please enter your team member ID (Required)',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please provide id number!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'link',
+            message: 'Enter the email to the Manager. (Required)',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please provide email!');
                     return false;
                 }
             }
@@ -20,12 +51,12 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'officeNum',
-            message: 'Enter your GitHub Username',
+            message: 'Enter office Phone Number',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log('Please enter your github username!');
+                    console.log('Please enter office phone number.');
                     return false;
                 }
             }
@@ -52,6 +83,7 @@ const promptUser = () => {
             }
         }
     ])
+
 };
 
 // added this mod 9.3.5
